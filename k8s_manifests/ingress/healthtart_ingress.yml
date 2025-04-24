@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: sw-camp-ingress
+  name: healthtart-ingress
   annotations:
     # 기본적으로 NGINX Ingress 컨트롤러는 모든 HTTP 트래픽을 HTTPS로 리다이렉트한다.
     # 이 설정을 "false"로 지정하면 HTTP 요청을 HTTPS로 자동 리다이렉트 하지 않는다.
@@ -24,7 +24,7 @@ spec:
         pathType: ImplementationSpecific
         backend:
           service:
-            name: vue002ser
+            name: healthtart-vue-service
             port: 
               number: 8000
       - path: /boot(/|$)(.*)
@@ -35,6 +35,6 @@ spec:
         pathType: ImplementationSpecific
         backend:
           service:
-            name: boot002ser
+            name: healthtart-boot-service
             port: 
               number: 8001

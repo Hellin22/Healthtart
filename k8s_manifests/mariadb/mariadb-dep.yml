@@ -1,20 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mariadb-deploy
+  name: healthtart-mariadb-deploy
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mariadb-kube
+      app: healthtart-mariadb
   template:
     metadata:
       labels:
-        app: mariadb-kube
+        app: healthtart-mariadb
     spec:
       containers:
       - name: mariadb
         image: kyeongseok/healthtart-mariadb:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 3306
         env:

@@ -20,7 +20,8 @@ bin/
 !**/src/test/**/bin/
 
 ### IntelliJ IDEA ###
-*.yml
+#*.yml
+/src/main/resources/application.yml
 .idea
 *.json
 *.iws
@@ -39,4 +40,3 @@ out/
 
 ### VS Code ###
 .vscode/
-/src/main/resources/application.yml

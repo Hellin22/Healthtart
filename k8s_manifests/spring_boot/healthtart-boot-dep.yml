@@ -1,21 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: boot002dep
+  name: healthtart-boot-deploy
 spec:
   selector:
     matchLabels:
-      app: boot002kube
+      app: healthtart-boot
   replicas: 1
   template:
     metadata:
       labels:
-        app: boot002kube
+        app: healthtart-boot
     spec:
       containers:
       - name: boot-container
         # image: ys0915/k8s_b_ing:latest
-        image: kyeongseok/nine_b_proj:latest
+        # image: kyeongseok/nine_b_proj:latest
+        image: kyeongseok/healthtart-boot:latest
         imagePullPolicy: Always
         ports:
         # - containerPort: 7777
