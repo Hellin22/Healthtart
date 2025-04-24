@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mariadb-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mariadb-kube
+  template:
+    metadata:
+      labels:
+        app: mariadb-kube
+    spec:
+      containers:
+      - name: mariadb
+        image: kyeongseok/healthtart-mariadb:latest
+        ports:
+        - containerPort: 3306
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mariadb-secret
+              key: MYSQL_ROOT_PASSWORD
+        - name: MYSQL_DATABASE
+          valueFrom:
+            secretKeyRef:
+              name: mariadb-secret
+              key: MYSQL_DATABASE
+        - name: MYSQL_USER
+          valueFrom:
+            secretKeyRef:
+              name: mariadb-secret
+              key: MYSQL_USER
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mariadb-secret
+              key: MYSQL_PASSWORD

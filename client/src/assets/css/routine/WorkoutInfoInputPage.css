@@ -1,0 +1,84 @@
+.workout-time-section {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 2px solid #01FDFE;
+    border-radius: 50px;
+    padding: 20px;
+    font-size: 30px;
+}
+
+.workout-time-section label {
+    margin-right: 10px;
+}
+
+.dropdown {
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid #ffffff;
+    background-color: #333;
+    color: white;
+}
+
+.body-parts-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.button-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 70px;
+    margin-bottom: 90px;
+}
+
+.body-part-button {
+    background-color: transparent;
+    border: 2px solid #000000;
+    width: 90px;
+    height:45px;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 13px;
+    transition: background-color 0.3s;
+    white-space: nowrap; 
+}
+
+.selected {
+    background-color: rgba(1, 255, 241, 0.67); 
+    color: #fff;
+  }
+
+.body-part-button:hover {
+    background-color: rgba(1, 255, 241, 0.67); 
+    color: rgb(255, 255, 255); 
+}
+
+.generate-routine-button {
+    background-color: #01FDFE;
+    color: black;
+    border: none;
+    width: 230px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 50px auto;
+}
+
+.generate-routine-button:hover {
+    background-color: #009999;
+}
+
+.select-label {
+    font-size: 22px;
+    color: #01FDFE;
+}

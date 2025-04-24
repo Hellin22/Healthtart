@@ -1,0 +1,268 @@
+@keyframes slideIn {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
+
+.mypageedit-form-group {
+    justify-content: flex-start;
+    align-items: center;
+    position: relative; /* position을 relative로 설정하여 z-index 적용 */
+    z-index: 10; /* 충분히 높은 z-index 값 설정 */
+    transition: 0.5 ease-in-out;
+}
+
+/* 애니메이션을 적용할 비밀번호 필드 */
+.mypageedit-form-group.password-animated, .extra-section.animated, .update-btn.animated {
+    animation: slideIn 0.5s ease forwards;
+    position: relative; /* position 추가 */
+    z-index: 15; /* z-index 값 높임 */
+}
+
+.mypageedit-layout {
+    background-color: black;
+    display: flex;
+    min-height: calc(100vh - 65px);
+    position: relative;
+    z-index: 1; /* 기본 z-index */
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.mypageedit-content {
+    flex-grow: 1;
+    margin-left: 280px;
+    margin-right: 280px;
+    background-color: #000;
+    color: #fff;
+    padding: 50px;
+    position: relative;
+    z-index: 2; /* 충분히 높은 z-index */
+}
+
+.last-updated {
+    position: absolute;
+    top: 60px;
+    right: 50px;
+    font-size: 14px;
+    color: #ffffff;
+    z-index: 30;
+}
+
+.mypageedit-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.password-change-group {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-weight: bold;
+    z-index: 5;
+}
+
+.password-change-group label {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-weight: bold;
+    z-index: 5;
+}
+
+.mypageedit-form-group label {
+    color: #fff;
+    font-weight: bold;
+    text-align: left;
+    font-size: 14px;
+    position: relative;
+    margin-right: 10px;
+    z-index: 5;
+}
+
+.mypageedit-form-checkbox {
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #01FEAE;
+    border-radius: 5px;
+    background-color: transparent;
+    cursor: pointer;
+    position: relative; 
+    margin-left: 10px;
+}
+
+.mypageedit-form-checkbox:checked {
+    background-color: #01FEAE;
+    border-color: #01FEAE;
+}
+
+.mypageedit-form-checkbox:checked::before {
+    content: "✔";
+    color: #000;
+    font-weight: bold;
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mypageedit-form-group input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    border-bottom: 1px solid rgb(0, 255, 255);
+    background-color: rgba(0, 255, 255, 0.1);
+    color: #fff;
+    font-size: 14px;
+    z-index: 15; /* z-index 값 추가 */
+    position: relative; /* position 추가 */
+    width: 70%;
+}
+
+.update-btn {
+    grid-column: 2;
+    justify-self: end;
+    padding: 5px 15px;
+    background-color: #01FEAE;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 5;
+}
+
+.extra-content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    padding-right: 15px;
+    z-index: 25;
+    position: relative;
+}
+
+.extra-section {
+    width: 50%;
+    border-radius: 5px;
+}
+
+.extra-button-group {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.add-btn {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #B8FFFF;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 4;
+}
+
+.remove-btn {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #ff4444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 4;
+}
+
+.label-text {
+    margin-top: 10px;
+    padding: 5px 10px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.selected-gym,
+.selected-rival {
+    margin-top: 10px;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.new-design {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.new-design-header {
+    display: flex;
+    background-color: #01FEAE;
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+}
+
+.new-design-icon {
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+    margin-right: 15px;
+}
+
+.new-design-title {
+    font-size: 18px;
+    color: black;
+    margin: 0;
+    font-weight: bold;
+}
+
+.new-design-actions {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.new-design-action-btn {
+    background-color: #ffffff;
+    color: #000;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.mypageedit-separator {
+    width: 100%;
+    height: 1px;
+    background-color: #ffffff;
+    margin: 20px 0;
+    z-index: 29;
+    position: relative;
+}

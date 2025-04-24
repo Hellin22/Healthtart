@@ -1,0 +1,229 @@
+.mypage-layout {
+    background-color: black;
+    display: flex;
+    min-height: calc(100vh - 65px);
+    position: relative;
+    z-index: 2;
+}
+
+
+.mypage-content {
+    flex-grow: 1;
+    margin-left: 280px;
+    margin-right: 280px;
+    background-color: #000;
+    color: #fff;
+    padding: 50px;
+    position: relative;
+    z-index: 20;
+}
+
+.last-updated {
+    position: absolute;
+    top: 60px;
+    right: 50px;
+    font-size: 14px;
+    color: #ffffff;
+    z-index: 30;
+}
+
+.mypage-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 30;
+}
+
+.form-group label {
+    color: #fff;
+    font-weight: bold;
+    width: 100px;
+}
+
+.form-group input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #00ffff;
+    background-color: transparent;
+    color: #fff;
+    font-size: 16px;
+    pointer-events: none;
+    user-select: none;
+  }
+  
+  .form-group input:disabled {
+    opacity: 1;
+    -webkit-text-fill-color: #fff;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+  }
+
+.button-group {
+    flex-direction: row;
+    grid-column: 2;
+    justify-self: end;
+    z-index: 30;
+}
+
+.inbody-btn {
+    padding: 5px 15px;
+    background-color: #63ffa4;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right : 15px;
+}
+
+.inbody-btn:hover {
+    background-color: #00ff1e;
+}
+
+.edit-btn {
+    padding: 5px 15px;
+    background-color: #00ffff;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.edit-btn:hover {
+    background-color: #00d0ff;
+}
+
+
+.mypage-separator {
+    width: 100%;
+    background-color: #ffffff;
+    margin: 20px;
+    z-index: 30;
+    position: relative;
+}
+
+.extra-content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    padding-right: 15px;
+    z-index: 25;
+    position: relative;
+}
+
+.extra-section {
+    width: 50%;
+    border-radius: 5px;
+    z-index: 30;
+}
+
+.extra-button-group {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.label-text {
+    margin-top: 10px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.selected-gym {
+    margin-top: 10px;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.selected-rival {
+    margin-top: 10px;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.new-design {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.new-design-header {
+    display: flex;
+    background-color: #01FEAE;
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+    z-index: 40;
+}
+
+.new-design-header-rival {
+    display: flex;
+    background-color: #01FDFE;
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+}
+
+.new-design-icon {
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+    margin-right: 15px;
+}
+
+.new-design-title {
+    font-size: 18px;
+    color: black;
+    margin: 0;
+    font-weight: bold;
+}
+
+.new-design-actions {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.new-design-action-btn {
+    background-color: #ffffff;
+    color: #000;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.new-design-action-btn:hover {
+    background-color: #e6e6e6;
+}

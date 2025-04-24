@@ -1,0 +1,121 @@
+.app {
+  background-color: #000;
+  color: #fff;
+  height: calc(100vh - 65px); /* 헤더를 제외한 영역 */
+  font-family: Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+main {
+  position: relative;
+  height: calc(100vh - 65px); /* 헤더를 제외한 영역 */
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.left-content {
+  top : 40px;
+  width: 50%;
+  position: relative;
+  height: 100%;
+}
+
+.h1content {
+  font-size: 72px;
+  line-height: 1.2;
+  position: absolute;
+  top: 47px;
+  left: 74px;
+  width: 757px;
+  z-index: 2;
+}
+
+.pcontent {
+  position: absolute;
+  top: 300px;
+  left: 74px;
+  width: 629px;
+  font-size: 24px;
+  line-height: 1.5;
+  z-index: 2;
+}
+
+.buttons {
+  position: absolute;
+  top: 487px;
+  left: 74px;
+  display: flex;
+  gap: 23px;
+}
+
+.primary-btn, .secondary-btn {
+  border-radius: 20px;
+  cursor: pointer;
+  width: 250px;
+  height: 47px;
+  font-size: 21px;
+  z-index: 2;
+}
+
+.primary-btn {
+  background-color: #00ffff;
+  color: #000;
+  border: none;
+}
+
+.primary-btn:hover {
+  background-color: #00ffbb;
+}
+
+.secondary-btn {
+  background-color: transparent;
+  color: #00ffff;
+  border: 1px solid #00ffff;
+}
+
+.secondary-btn:hover {
+  background-color: #00ffbb;
+  color: #000000;
+  border: 1px solid #000000;
+}
+
+.right-content {
+  top : 40px;
+  width: 50%;
+  position: relative;
+  height: 100%;
+}
+
+.main-image {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  right: 20px;
+  transform: translateY();
+  z-index: 2;
+}
+
+.blue-label {
+  position: absolute;
+  left: 50%;
+  transform: translate(-110%);
+  width: 80%;
+  height: auto;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .left-content, .right-content {
+    width: 100%;
+  }
+}

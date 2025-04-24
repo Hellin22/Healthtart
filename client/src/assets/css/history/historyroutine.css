@@ -1,0 +1,240 @@
+.routine-calendar-container {
+   background-color: #141414;
+    width: 100%;
+    margin: auto;
+    color: white;
+    position: relative;
+  }
+  
+  .calendar-header {
+    position: relative;
+    margin-left: 260px;
+    text-align: left;
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: white;
+    z-index: 2;
+  }
+  
+  .calendar-layout {
+    margin-left: 260px;
+    display: flex;
+    align-items: flex-start;
+    z-index: 2;
+  }
+  
+  .calendar-table {
+    width: 80%; /* 달력의 너비 */
+    height: 450px;
+    border-collapse: collapse;
+    text-align: left;
+    table-layout: fixed;
+    z-index: 2;
+  }
+  
+  th {
+    border: none; /* 요일 머리글에서 점선 제거 */
+    padding-bottom: 5px;
+    font-size: 12px; /* 작은 폰트 크기 조정 */
+    font-weight: 300; /* 얇은 폰트 두께 설정 */
+    
+  }
+  
+  td {
+    border: 1px dashed #555; /* 점선 스타일 */
+    width: 80px;
+    height: 90px;
+    color: white;
+    font-size: 18px;
+  }
+  
+  .day-cell {
+    text-align: center;
+    padding-top: 10px;
+    position: relative;
+  }
+  
+  .workout-icon img {
+    width: 90px;
+    height: 70px;
+  }
+  
+  .day-number {
+    position: absolute;
+    top: 5px;  /* 셀의 왼쪽 상단에 위치 */
+    left: 5px; /* 셀의 왼쪽 상단에 위치 */
+    font-size: 12px; /* 작은 폰트 크기 조정 */
+    font-weight: 300; /* 얇은 폰트 두께 설정 */
+  }
+  
+  /* 오늘 날짜를 원형으로 표시 */
+  .current-date-circle {
+    display: inline-block;
+  
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(0, 150, 136, 0.7); /* 원형 배경 색상 */
+    line-height: 20px;
+    font-weight: bold; /* 숫자 두께 설정 */
+    
+  }
+  
+  .legend {
+    width: 20%; /* 전설의 너비 줄이기 */
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* 전설 항목을 세로로 나열 */
+    z-index: 2;
+  }
+  
+  .legend-item {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-left: 40px;
+  }
+  
+  .legend-icon {
+    width: 80px;
+    height: 40px;
+    margin-right: 30px;
+  }
+
+  .modal-overlay {
+    z-index: 9999; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(103, 100, 100, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .modal-content {
+    z-index: 10000; 
+    margin: 0;
+    background-color: #141414; 
+    padding: 20px;
+    height: 500px;
+    border-radius: 12px;
+    width: 800px; 
+    box-shadow: 0 4px 20px #00000033;
+    color: white; 
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+  }
+  
+  .header-row {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    
+  }
+  
+  h3 {
+    font-weight: 500;
+    margin: 0;
+    color: #fff;
+    font-size: 25px;
+  }
+  
+  .workout-time {
+    font-weight: 500;
+    text-align: right;
+    font-size: 23px;
+    color: #c1c1c1;
+  }
+  
+  .workout-table {
+    margin: 0;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    gap: 1px;
+  }
+  
+  .workout-table th,
+  .workout-table td {
+    padding: 8px;
+    font-size: 20px;
+    border: none; /* 기본적으로 아래쪽 테두리는 제거 */
+  }
+  
+  .workout-table td:first-child, 
+  .workout-table td:nth-child(2), 
+  .workout-table td:nth-child(3) { 
+    border-right: 1px solid #01FDFE;
+  }
+  
+  
+  .workout-table th {
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .satisfaction {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  
+  }
+  .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    
+  }
+  
+  .stars {
+    display: flex;
+  }
+  
+  .stars span {
+    font-size: 27px;
+    
+  }
+  
+  .star {
+    margin: 0 2px;
+  }
+  .activestar {
+    width: 40px; /* 채워진 별의 크기 */
+    height: 40px;
+  }
+  
+  .inactivestar {
+    width: 35px; /* 빈 별의 크기 */
+    height: 35px;
+  }
+  
+  
+  .confirm-btn {
+    display: block;
+    width: 215px;
+    height: 30px;
+    margin: 20px auto 0;
+    background-color: #01FDFE;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  
+  .confirm-btn:hover {
+    background-color: #01FEAE;
+  }

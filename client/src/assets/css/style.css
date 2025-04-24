@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    /* background-color: black; */
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2); 
+    border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(1, 254, 174);
+    border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(0, 200, 100);
+}

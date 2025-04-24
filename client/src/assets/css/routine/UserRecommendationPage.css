@@ -1,0 +1,49 @@
+.board-header {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
+    padding: 20px 16px;
+    margin-top: -30px;
+    font-weight: bold;
+    border-bottom: 2px solid rgb(1, 254, 174, 0.5);
+    text-align: center;
+}
+
+.board-body {
+    display: flex;
+    flex-direction: column;
+    max-height: 400px; 
+    overflow-y: auto; 
+}
+
+.board-row {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
+    padding: 10px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.board-row-title, .board-row-number, .board-row-rating, .board-row-time, .board-row-start {
+    text-align: center;
+}
+
+.board-row-title {
+    cursor: pointer;
+}
+
+.star-filled {
+    color: rgb(255, 255, 67);
+}
+
+.board-row-start button {
+    padding: 3px 15px;
+    background-color: #01FDFE;
+    border: none;
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.board-row-start button:hover {
+    background-color: #ffffff;
+}

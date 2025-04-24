@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: boot002dep
+spec:
+  selector:
+    matchLabels:
+      app: boot002kube
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: boot002kube
+    spec:
+      containers:
+      - name: boot-container
+        # image: ys0915/k8s_b_ing:latest
+        image: kyeongseok/nine_b_proj:latest
+        imagePullPolicy: Always
+        ports:
+        # - containerPort: 7777
+        - containerPort: 8080
+
+      - name: redis-container
+        # Redis 컨테이너
+        image: redis:latest
+        ports:
+        - containerPort: 6379

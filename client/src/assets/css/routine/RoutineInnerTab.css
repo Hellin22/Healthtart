@@ -1,0 +1,84 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    color: white;
+    height: calc(100vh - 65px);
+    padding-top: 20px;
+}
+
+.inner-tab {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    width: 80%;
+}
+
+.nav-menu {
+    margin: 0;
+}
+
+.nav-button {
+    background-color: #01FEAE;
+    color: black;
+    border: none;
+    padding: 10px 259px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px 10px 0 0;
+    transition: background-color 0.3s;
+    width: 100%;
+    white-space: nowrap; 
+}
+
+.nav-button:hover {
+    background-color: #009999;
+}
+
+.active-button {
+    background-color: #01FEAE;
+    color: black;
+    border: none;
+    padding: 10px 259px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px 10px 0 0;
+    transition: background-color 0.3s;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.inactive-button {
+    background-color: #B7B7B8;
+    color: black;
+    border: none;
+    padding: 10px 259px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px 10px 0 0;
+    transition: background-color 0.3s;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.main-container {
+    width: 80%;
+    height: 80%;
+    padding: 40px;
+    background-color: #000000;
+    border: 2px solid #01FDFE;
+    border-radius: 0 0 15px 15px;
+}
+
+.user-container {
+    width: 80%;
+    height: 80%;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0);
+    border-radius: 0 0 15px 15px;
+}
+
