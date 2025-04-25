@@ -26,7 +26,8 @@ COPY --from=build /app/build/libs/*.jar ./
 RUN mv $(ls *.jar | grep -v plain) app.jar
 
 # application.yml 파일 복사
-COPY src/main/resources/application.yml ./application.yml
+# COPY src/main/resources/application.yml ./application.yml
+# 젠킨스 파일을 통해서 application.yml 다루기 때문에 주석
 
 #app.jar를 리눅스 환경에서 실행(스프링 부트 서버 실행 (7777포트))
 ENTRYPOINT ["java", "-jar", "app.jar"]
