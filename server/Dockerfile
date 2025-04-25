@@ -25,6 +25,8 @@ COPY --from=build /app/build/libs/*.jar ./
 # *.jar파일을 나열하고 grep을 사용해 'plain'이라는 단어가 포함되지 않은 줄을 선택해 app.jar로 변경
 RUN mv $(ls *.jar | grep -v plain) app.jar
 
+# application.yml 파일 복사
+COPY src/main/resources/application.yml ./application.yml
 
 #app.jar를 리눅스 환경에서 실행(스프링 부트 서버 실행 (7777포트))
 ENTRYPOINT ["java", "-jar", "app.jar"]
