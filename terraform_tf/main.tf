@@ -142,4 +142,8 @@ resource "kubernetes_ingress_v1" "healthtart_ingress" {
       }
     }
   }
+  depends_on = [
+    kubernetes_service.healthtart_vue_service,
+    kubernetes_service.healthtart_boot_service
+  ]
 }
