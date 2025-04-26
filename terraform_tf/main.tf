@@ -1,5 +1,5 @@
 provider "kubernetes" {
-  config_path = "~/.kube/config"
+  config_path = "C:/Program Files/Jenkins/.kube/config"
 }
 
 # Spring Boot Deployment
