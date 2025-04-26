@@ -29,7 +29,7 @@ RUN mv $(ls *.jar | grep -v plain) app.jar
 # COPY src/main/resources/application.yml ./application.yml
 # 젠킨스 파일을 통해서 application.yml 다루기 때문에 주석
 
-COPY application.yml ./application.yml
+# COPY application.yml ./application.yml
 
 #app.jar를 리눅스 환경에서 실행(스프링 부트 서버 실행 (7777포트))
 ENTRYPOINT ["java", "-jar", "app.jar"]
