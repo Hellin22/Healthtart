@@ -124,6 +124,7 @@ resource "kubernetes_ingress_v1" "healthtart_ingress" {
     rule {
       http {
         path {
+          # vue ingress 수정
           path = "/(/|$)(.*)$"
           path_type = "ImplementationSpecific"
           backend {
