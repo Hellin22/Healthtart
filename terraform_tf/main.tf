@@ -2,12 +2,11 @@ provider "kubernetes" {
   config_path = "C:/Program Files/Jenkins/.kube/config"
 }
 
-# Spring Boot Deployment
-resource "kubernetes_deployment" "healthtart_boot_dep" {
+# Boot Deployment
+resource "kubernetes_deployment" "healthtart_boot_deploy" {
   metadata {
-    name = "healthtart-boot-dep"
+    name = "healthtart-boot-deploy"
   }
-
   spec {
     replicas = 1
     selector {
@@ -23,8 +22,8 @@ resource "kubernetes_deployment" "healthtart_boot_dep" {
       }
       spec {
         container {
-          image = "kyeongseok/healthtart-boot:latest"  # 예시 버전
           name  = "boot-container"
+          image = "kyeongseok/healthtart-boot:latest"
           image_pull_policy = "Always"
           port {
             container_port = 8080
@@ -35,12 +34,28 @@ resource "kubernetes_deployment" "healthtart_boot_dep" {
   }
 }
 
-# Vue Deployment
-resource "kubernetes_deployment" "healthtart_vue_dep" {
+# Boot Service
+resource "kubernetes_service" "healthtart_boot_service" {
   metadata {
-    name = "healthtart-vue-dep"
+    name = "healthtart-boot-service"
   }
+  spec {
+    selector = {
+      app = "healthtart-boot"
+    }
+    port {
+      port        = 8001
+      target_port = 8080
+    }
+    type = "ClusterIP"
+  }
+}
 
+# Vue Deployment
+resource "kubernetes_deployment" "healthtart_vue_deploy" {
+  metadata {
+    name = "healthtart-vue-deploy"
+  }
   spec {
     replicas = 1
     selector {
@@ -56,8 +71,8 @@ resource "kubernetes_deployment" "healthtart_vue_dep" {
       }
       spec {
         container {
-          image = "kyeongseok/healthtart-vue:latest"
           name  = "vue-container"
+          image = "kyeongseok/healthtart-vue:latest"
           image_pull_policy = "Always"
           port {
             container_port = 80
@@ -69,41 +84,18 @@ resource "kubernetes_deployment" "healthtart_vue_dep" {
 }
 
 # Vue Service
-resource "kubernetes_service" "healthtart_vue_ser" {
+resource "kubernetes_service" "healthtart_vue_service" {
   metadata {
-    name = "healthtart-vue-ser"
+    name = "healthtart-vue-service"
   }
-
   spec {
     selector = {
       app = "healthtart-vue"
     }
-
     port {
       port        = 8000
       target_port = 80
     }
-
-    type = "ClusterIP"
-  }
-}
-
-# Boot Service
-resource "kubernetes_service" "healthtart_boot_ser" {
-  metadata {
-    name = "healthtart-boot-ser"
-  }
-
-  spec {
-    selector = {
-      app = "healthtart-boot"
-    }
-
-    port {
-      port        = 8001
-      target_port = 8080
-    }
-
     type = "ClusterIP"
   }
 }
@@ -117,19 +109,17 @@ resource "kubernetes_ingress_v1" "healthtart_ingress" {
       "nginx.ingress.kubernetes.io/rewrite-target" = "/$2"
     }
   }
-
   spec {
     ingress_class_name = "nginx"
 
     rule {
       http {
         path {
-          # vue ingress 수정
           path = "/(/|$)(.*)$"
           path_type = "ImplementationSpecific"
           backend {
             service {
-              name = "healthtart-vue-ser"
+              name = "healthtart-vue-service"
               port {
                 number = 8000
               }
@@ -142,7 +132,7 @@ resource "kubernetes_ingress_v1" "healthtart_ingress" {
           path_type = "ImplementationSpecific"
           backend {
             service {
-              name = "healthtart-boot-ser"
+              name = "healthtart-boot-service"
               port {
                 number = 8001
               }
