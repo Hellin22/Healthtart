@@ -124,7 +124,7 @@ resource "kubernetes_ingress_v1" "healthtart_ingress" {
     rule {
       http {
         path {
-          path = "/vue(/|$)(.*)$"
+          path = "/(/|$)(.*)$"
           path_type = "ImplementationSpecific"
           backend {
             service {
