@@ -24,7 +24,7 @@ spec:
         pathType: ImplementationSpecific
         backend:
           service:
-            name: healthtart-vue-service
+            name: healthtart-vue-ser
             port: 
               number: 8000
       - path: /boot(/|$)(.*)
@@ -35,6 +35,6 @@ spec:
         pathType: ImplementationSpecific
         backend:
           service:
-            name: healthtart-boot-service
+            name: healthtart-boot-ser
             port: 
               number: 8001
